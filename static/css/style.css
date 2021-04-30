@@ -1,0 +1,96 @@
+.player-tag {
+    border-radius: 12px;
+    background-color: lightslategrey;
+    height: 50px;
+    width: 250px;
+    margin: 5px;
+    padding: 10px;
+    border: 2px solid black;
+    color: white;
+}
+.player-tag h5 {
+    text-align: center;
+}
+.tile {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: lightslategrey;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#board {
+    position: relative;
+    height: 750px;
+    width: 750px;
+}
+#underlay {
+    opacity: 0.25;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.start {
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid black;
+}
+.start-vert {
+    position: absolute;
+    width: 30px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+}
+.red-pawn {
+    border: 1px solid black;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    background-color: red;
+}
+.yellow-pawn {
+    border: 1px solid black;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    background-color: yellow;
+}
+.blue-pawn {
+    border: 1px solid black;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    background-color: blue;
+}
+.green-pawn {
+    border: 1px solid black;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    background-color: green;
+}
+#dice {
+    position: absolute;
+    top: 0px; 
+    right: 0px;
+    height: 80px;
+    width: 80px;
+    background-color: lightslategray;
+}
+.turnPlate {
+    position: absolute;
+    top: 0;
+    left: 0;
+}

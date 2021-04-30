@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='icon' type='image/x-icon' href='/img/favicon.ico' />
+    <title>Ludo</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"
+        integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf"
+        crossorigin="anonymous"></script>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <header class="bg-dark text-white d-flex flex-row justify-content-center p-2">
+        <h1>Ludo</h1>
+    </header>
+    <div class="col-12 d-flex flex-column justify-content-center align-items-center p-4">
+        <div class="d-flex flex-column align-items-center">
+            <button id="leaveBtn">Opuść grę</button>
+        </div>
+        <div class="d-flex flex-column align-items-center" id="readyBtn">
+            <p>Chcę już grać!</p>
+            <input type="checkbox" id="readyToPlay" />
+        </div>
+        <div class="col-12 d-flex flex-row justify-content-center">
+            <div class="player-tag" id="player-0">
+                <h5></h5>
+            </div>
+            <div class="player-tag" id="player-1">
+                <h5></h5>
+            </div>
+            <div class="player-tag" id="player-2">
+                <h5></h5>
+            </div>
+            <div class="player-tag" id="player-3">
+                <h5></h5>
+            </div>
+        </div>
+        <div id="board">
+            <div id="underlay" style="background-image: url(/img/boardBG.png);">
+            </div>
+            <div class="turnPlate">
+                <h2>Teraz gra:</h2>
+                <h3 id="currentPlayerTurn"></h3>
+            </div>
+            <div id="dice"></div>
+            <div class="tile" id="0" style="bottom:25px; left: 295px;"></div>
+            <div class="tile" id="1" style="bottom:80px; left: 295px;"></div>
+            <div class="tile" id="2" style="bottom:135px; left: 295px;"></div>
+            <div class="tile" id="3" style="bottom:190px; left: 295px;"></div>
+            <div class="tile" id="4" style="bottom:245px; left: 295px;"></div>
+            <div class="tile" id="5" style="bottom:245px; left: 240px;"></div>
+            <div class="tile" id="6" style="bottom:245px; left: 185px;"></div>
+            <div class="tile" id="7" style="bottom:245px; left: 130px;"></div>
+            <div class="tile" id="8" style="bottom:245px; left: 75px;"></div>
+            <div class="tile" id="9" style="bottom:300px; left: 75px;"></div>
+            <div class="tile" id="10" style="bottom:355px; left: 75px;"></div>
+            <div class="tile" id="11" style="bottom:355px; left: 130px;"></div>
+            <div class="tile" id="12" style="bottom:355px; left: 185px;"></div>
+            <div class="tile" id="13" style="bottom:355px; left: 240px;"></div>
+            <div class="tile" id="14" style="bottom:355px; left: 295px;"></div>
+            <div class="tile" id="15" style="bottom:410px; left: 295px;"></div>
+            <div class="tile" id="16" style="bottom:465px; left: 295px;"></div>
+            <div class="tile" id="17" style="bottom:520px; left: 295px;"></div>
+            <div class="tile" id="18" style="bottom:575px; left: 295px;"></div>
+            <div class="tile" id="19" style="bottom:575px; left: 350px;"></div>
+            <div class="tile" id="20" style="bottom:575px; left: 405px;"></div>
+            <div class="tile" id="21" style="bottom:520px; left: 405px;"></div>
+            <div class="tile" id="22" style="bottom:465px; left: 405px;"></div>
+            <div class="tile" id="23" style="bottom:410px; left: 405px;"></div>
+            <div class="tile" id="24" style="bottom:355px; left: 405px;"></div>
+            <div class="tile" id="25" style="bottom:355px; left: 460px;"></div>
+            <div class="tile" id="26" style="bottom:355px; left: 515px;"></div>
+            <div class="tile" id="27" style="bottom:355px; left: 570px;"></div>
+            <div class="tile" id="28" style="bottom:355px; left: 625px;"></div>
+            <div class="tile" id="29" style="bottom:300px; left: 625px;"></div>
+            <div class="tile" id="30" style="bottom:245px; left: 625px;"></div>
+            <div class="tile" id="31" style="bottom:245px; left: 570px;"></div>
+            <div class="tile" id="32" style="bottom:245px; left: 515px;"></div>
+            <div class="tile" id="33" style="bottom:245px; left: 460px;"></div>
+            <div class="tile" id="34" style="bottom:245px; left: 405px;"></div>
+            <div class="tile" id="35" style="bottom:190px; left: 405px;"></div>
+            <div class="tile" id="36" style="bottom:135px; left: 405px;"></div>
+            <div class="tile" id="37" style="bottom:80px; left: 405px;"></div>
+            <div class="tile" id="38" style="bottom:25px; left: 405px;"></div>
+            <div class="tile" id="39" style="bottom:25px; left: 350px;"></div>
+            <div class="tile" id="red-home-0" style="bottom:80px; left: 350px;"></div>
+            <div class="tile" id="red-home-1" style="bottom:135px; left: 350px;"></div>
+            <div class="tile" id="red-home-2" style="bottom:190px; left: 350px;"></div>
+            <div class="tile" id="red-home-3" style="bottom:245px; left: 350px;"></div>
+            <div class="tile" id="yellow-home-0" style="bottom:300px; left: 130px;"></div>
+            <div class="tile" id="yellow-home-1" style="bottom:300px; left: 185px;"></div>
+            <div class="tile" id="yellow-home-2" style="bottom:300px; left: 240px;"></div>
+            <div class="tile" id="yellow-home-3" style="bottom:300px; left: 295px;"></div>
+            <div class="tile" id="blue-home-0" style="bottom:520px; left: 350px;"></div>
+            <div class="tile" id="blue-home-1" style="bottom:465px; left: 350px;"></div>
+            <div class="tile" id="blue-home-2" style="bottom:410px; left: 350px;"></div>
+            <div class="tile" id="blue-home-3" style="bottom:355px; left: 350px;"></div>
+            <div class="tile" id="green-home-0" style="bottom:300px; left: 570px;"></div>
+            <div class="tile" id="green-home-1" style="bottom:300px; left: 515px;"></div>
+            <div class="tile" id="green-home-2" style="bottom:300px; left: 460px;"></div>
+            <div class="tile" id="green-home-3" style="bottom:300px; left: 405px;"></div>
+            <div class="start" id="red-start" style="bottom:25px; left: 150px;"></div>
+            <div class="start-vert" id="yellow-start" style="top:175px; left: 80px;"></div>
+            <div class="start" id="blue-start" style="bottom:625px; right: 175px;"></div>
+            <div class="start-vert" id="green-start" style="bottom:110px; right: 80px;"></div>
+        </div>
+    </div>
+    <footer class="d-flex flex-column align-items-center">
+        <h4>Fajna gra i wgl</h4>
+        <h5>Paweł Otak 3Ia1</h5>
+    </footer>
+    <script type="module" src="/js/game.js"></script>
+</body>
+
+</html>
